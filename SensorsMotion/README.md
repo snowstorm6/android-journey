@@ -129,3 +129,22 @@ public class SensorActivity extends Activity implements SensorEventListener {
     }
 }
 ```
+
+## Best practice for Accessing and Using Sensors
+
+- Unregister sensor listeners.
+
+```kotlin
+private SensorManager sensorManager;
+...
+@Override
+protected void onPause() {
+    super.onPause();
+    sensorManager.unregisterListener(this);
+}
+```
+
+- Do not block the onSensorChanged() method. Function này có thể sẽ được gọi liên tục và rất nhanh, nên hạn chế ít công việc trong function này nhất có thể.
+- Tránh sử dụng các methods hoặc các sensor types đã deprecated
+- Verify sensors trước khi sử dụng
+- Chọn thời gian delay cẩn thận, tùy thuộc vào usecase bạn đang dùng trong ứng dụng
