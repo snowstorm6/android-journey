@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/priceRangeBarContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:background="@android:color/darker_gray"
+    android:paddingVertical="12dp"
+    tools:context=".PriceRangeActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <View
+        android:id="@+id/viewRangeBackground"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:background="@drawable/bg_corner"
+        app:layout_constraintBottom_toTopOf="@id/tvValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivMin" />
+
+    <View
+        android:id="@+id/viewRange"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="@id/viewRangeBackground"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@id/viewRangeBackground" />
+
+    <View
+        android:id="@+id/viewValue"
+        android:layout_width="1dp"
+        android:layout_height="12dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@id/viewRangeBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/viewRangeBackground"
+        app:layout_constraintHorizontal_bias="0.05" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ivMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/im_range_pricee"
+        android:gravity="center_horizontal"
+        android:text="33,28"
+        android:textColor="@android:color/black"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/viewRangeBackground"
+        app:layout_constraintEnd_toEndOf="@id/guidelineLeft"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ivMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/im_range_pricee"
+        android:gravity="center_horizontal"
+        android:text="41,42"
+        android:textColor="@android:color/black"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/ivMin"
+        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintStart_toStartOf="@id/guidelineRight"
+        app:layout_constraintTop_toTopOf="@id/ivMin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/im_pricee"
+        android:gravity="center_horizontal"
+
+        android:text="Tin đang xem\n32,28 tr/m2"
+        android:textColor="@android:color/black"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/viewValue"
+        app:layout_constraintStart_toStartOf="@id/viewValue"
+        app:layout_constraintTop_toBottomOf="@id/viewRangeBackground"
+        app:lineHeight="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

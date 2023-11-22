@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/compose-model-1669131364323.xml" value="1.5270758122743682" />
+        <entry key="app/src/main/res/layout/activity_chart.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/layout/widget_price_range.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>
@@ -13,5 +14,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.46600741656365885" />
+      </ProjectState>
+    </option>
   </component>
 </project>
