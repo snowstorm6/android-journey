@@ -4,16 +4,16 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk AppConfigs.compileSdk
 
     defaultConfig {
-        applicationId "com.example.sonng266.android_journey"
-        minSdk 21
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        applicationId AppConfigs.applicationId
+        minSdk AppConfigs.minSdk
+        targetSdk AppConfigs.targetSdk
+        versionCode AppConfigs.versionCode
+        versionName AppConfigs.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner AppConfigs.testInstrumentationRunner
         vectorDrawables {
             useSupportLibrary true
         }
@@ -22,7 +22,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles(getDefaultProguardFile(Constants.PROGUARD_ANDROID_OPTIMIZE), Constants.PROGUARD_RULES)
         }
     }
     compileOptions {
@@ -30,20 +30,19 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = AppConfigs.jvmTarget
     }
     buildFeatures {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion AppConfigs.kotlinCompilerExtensionVersion
     }
     packagingOptions {
         resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += Constants.EXCLUDES
         }
     }
-    buildToolsVersion '33.0.0'
 }
 
 dependencies {
