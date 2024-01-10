@@ -1,3 +1,5 @@
+import tasks.SyncDrawablesTask
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -64,3 +66,5 @@ dependencies {
 
     implementation project(path: ':chart')
 }
+
+tasks.register("syncDrawablesTask", SyncDrawablesTask) {}
